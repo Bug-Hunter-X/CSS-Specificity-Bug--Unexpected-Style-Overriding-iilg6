@@ -1,0 +1,1 @@
+The CSS code has a specificity issue.  The style applied to the element is overridden by another style with higher specificity.  For example, an inline style might override an embedded style sheet, which might override an external style sheet.
