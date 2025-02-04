@@ -1,0 +1,19 @@
+The solution involves adjusting the CSS to resolve the specificity conflict. This might involve:
+
+1. **Increasing the specificity of the intended style:** Add more specific selectors to the CSS rule that should take precedence. For example, change `p { color: blue; }` to `#myParagraph p { color: blue; }` if the paragraph in question has the ID `myParagraph`.
+2. **Decreasing the specificity of the overriding style:** If possible, modify the CSS rule that has higher specificity and make it more general.
+3. **Using the `!important` flag (with caution):** Use the `!important` flag as a last resort, as it can lead to difficult-to-maintain CSS.  Ensure you fully understand its implications before use.   Example: `p { color: blue !important; }`
+
+**Example (bug.css):**
+```css
+p { color: blue; }
+.container p { color: red; }
+```
+
+**Example (bugSolution.css):**
+```css
+#myParagraph { color: blue; }
+.container p { color: red; }
+/* Or using !important (use cautiously) */
+/* p { color: blue !important; } */
+```
